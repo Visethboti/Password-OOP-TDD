@@ -16,8 +16,17 @@ class CPassword {
         // Ask user for password
         void askForPassword() {
             string input;
-            cout << "Enter a password:";
-            cin >> input;
+            bool done = false;
+
+            do {
+                cout << "Enter a password:";
+                cin >> input;
+
+                if (check(input)) {
+                    done = true;
+                }
+            } while (!done);
+
             password = input;
         }
 
@@ -79,6 +88,32 @@ class CPassword {
             }
 
             return false;
+        }
+
+        bool check(string str) {
+            bool result = true;
+            if (!character(str)) {
+                cout << "CPassword: Invalid Password: password need to be at least 6 character long" << endl;
+                result = false;
+            }
+            if (!lower(str)) {
+                cout << "CPassword: Invalid Password: password need to contain at least one lower case" << endl;
+                result = false;
+            }
+            if (!upper(str)) {
+                cout << "CPassword: Invalid Password: password need to contain at least one upper case" << endl;
+                result = false;
+            }
+            if (!digit(str)) {
+                cout << "CPassword: Invalid Password: password need to contain at least one digit" << endl;
+                result = false;
+            }
+            if (!special(str)) {
+                cout << "CPassword: Invalid Password: password need to contain at least one special character ~!@#$%^&*()_+" << endl;
+                result = false;
+            }
+
+            return result;
         }
     private:
         string password;
@@ -355,5 +390,7 @@ int main()
     TestCPassword testcpassword; // TestCPassword is a class use for testing methods in CPassword
     testcpassword.testAll(); // run all test cases 
 
+    CPassword cpassword; // CPassword is the class use for prompt user for password and check the password validity
+    cpassword.askForPassword(); // ask user to input a password
 }
 
