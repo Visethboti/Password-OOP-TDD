@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "da95c5be-6f54-4a3b-81b3-fb6b0052cbe7": {
+      "ProjectGuid": "da95c5be-6f54-4a3b-81b3-fb6b0052cbe7",
+      "DisplayName": "CSCI640-Lab01-OOP-TDD",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
